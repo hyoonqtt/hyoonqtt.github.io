@@ -1,6 +1,3 @@
-// Single source of truth for social URLs (personal accounts: single-t).
-// Mirror any change here in the <noscript> list in index.html so the page
-// works with JavaScript disabled.
 var SITE_LINKS = [
   { label: "GitHub", url: "https://github.com/hyoonqt" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/zaki-h-7b47bb370/" },
@@ -10,7 +7,6 @@ var SITE_LINKS = [
 
 (function () {
   function iconFor(label) {
-    // Inline SVG icons keep the page dependency-free (no Font Awesome).
     if (label === "GitHub") {
       return (
         '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor">' +
@@ -48,7 +44,6 @@ var SITE_LINKS = [
         "</svg>"
       );
     }
-    // Generic globe icon for any future entry without a dedicated glyph.
     return (
       '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" ' +
       'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
@@ -64,7 +59,6 @@ var SITE_LINKS = [
     list.textContent = "";
     SITE_LINKS.forEach(function (link, i) {
       var li = document.createElement("li");
-      // Stagger the entrance to match the CSS cascade.
       li.style.animationDelay = (1 + i * 0.1).toFixed(2) + "s";
       var tip = document.createElement("div");
       tip.className = "tooltip";
@@ -93,9 +87,6 @@ var SITE_LINKS = [
 })();
 
 (function () {
-  // Service-worker removal backup: this site ships no worker (see sw.js).
-  // If an old one (e.g. ex-Jekyll) still controls this origin, drop it
-  // and its caches on page load. Harmless when nothing is registered.
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.getRegistrations().then(function (regs) {
       regs.forEach(function (reg) {

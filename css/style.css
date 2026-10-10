@@ -1,10 +1,4 @@
-/* Landing page. Dark navy + yellow scheme: near-black navy bg #060d18,
-   surfaces #0b1f3b, steel-blue #123a63 for borders/rules/hovers, main
-   accent yellow #f6c445 (interactive feedback, focus, selection).
-   Secondary text is a light steel tint for contrast.
-   Layout language inspired by washi.dev, rebuilt dependency-free:
-   system font stack, inline SVG, transform-based `backwards`-fill
-   entrance plus `prefers-reduced-motion` support. */
+
 
 :root {
   color-scheme: dark;
@@ -72,7 +66,7 @@ body {
   text-align: center;
 }
 
-/* Avatar */
+
 
 .avatar {
   width: 200px;
@@ -91,7 +85,7 @@ body {
   }
 }
 
-/* Title */
+
 
 .title-wrap h1 {
   font-size: 2.5rem;
@@ -105,7 +99,7 @@ body {
   margin: 0 0 2rem;
 }
 
-/* Primary buttons */
+
 
 .main-links {
   display: flex;
@@ -145,7 +139,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Social icon row + tooltips */
+
 
 .social-row {
   list-style: none;
@@ -237,7 +231,7 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Projects (used only when entries are supplied) */
+
 
 .projects hr {
   width: 24px;
@@ -269,7 +263,7 @@ body {
   color: var(--icon-hover);
 }
 
-/* Footer */
+
 
 .footer {
   margin-top: 2.5rem;
@@ -281,7 +275,7 @@ body {
   margin: 0;
 }
 
-/* Staggered entrance (fill-backwards: visible when animations are off) */
+
 
 @keyframes rise {
   from {
